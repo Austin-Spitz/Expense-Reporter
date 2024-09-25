@@ -9,15 +9,28 @@ Work in progress. PDF file types are not supported currently.
 - Configure a lambda with the necessary code from the provided backend folder.
 - Add AWS Layer to lambda: AWSSDKPandas-Python312, version 4.
 - Connect the S3 buckets to the Lambda by creating a trigger in the Lambda
-- Generate Access Key ID and Secret Access Key from your AWS account. 
+- Generate Access Key ID and Secret Access Key from your AWS account.
+- Create a Dynamodb
 
 # Setup: Frontend
 
-- Navigate to frontend/src/pages/homePage.
-- Update the S3 upload function with Access Key ID, Secret Access Key, and region (Should be around line 13).
-- Replace the "Bucket" field with your S3 bucket name (Around line 42)
-- Repeat the following in the "View Pages" file, but for the "Tablename: " field in the deleteScan function and the useEffect function, update it so that it matches your DynamoDB table name.
+- Navigate to the .env file in the frontend
+- Update the values based on what you have
 
+```
+
+ACCESS_KEY = your_access_key_here
+
+SECRET_ACCESS_KEY = your_secret_access_key_here
+
+REGION = your_aws_region_here
+
+BUCKET_NAME = your_bucket_name_here
+
+TABLE_NAME = your_table_name_here
+
+```
+  
 # Known Bugs / Limitations
 
 - Uploading a PDF image to S3 results in an "unsupported file type" error.
